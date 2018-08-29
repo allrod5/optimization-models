@@ -10,6 +10,7 @@ class Context {
 private:
     std::vector<Agent> agents;
     std::vector<Visit> visits;
+    unsigned int slots;
     Context(std::vector<Agent> agents, std::vector<Visit> visits);
 
 public:
@@ -17,6 +18,7 @@ public:
     static Context read();
     std::vector<Agent> & getAgents();
     std::vector<Visit> & getVisits();
+    unsigned int getSlots();
 };
 
 

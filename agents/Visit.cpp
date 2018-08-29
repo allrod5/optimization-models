@@ -4,7 +4,7 @@
 Visit::Visit(unsigned int slot, double x, double y, unsigned int visitors)
         : slot(slot), x(x), y(y), visitors(visitors) {}
 
-unsigned int Visit::getSlot() {
+unsigned int Visit::getSlot() const {
     return slot;
 }
 

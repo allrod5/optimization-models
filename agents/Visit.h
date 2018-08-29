@@ -2,19 +2,21 @@
 #define OPTIMIZATION_MODELS_VISIT_H
 
 
-class Visit {
+#include "Location.h"
 
-private:
-    unsigned int slot;
+class Visit : public Location {
+protected:
     double x;
     double y;
+    unsigned int slot;
     unsigned int visitors;
     Visit(unsigned int slot, double x, double y, unsigned int visitors);
 
 public:
     static Visit read();
-    unsigned int getSlot();
+    unsigned int getSlot() const;
     unsigned int getVisitors();
+    Type getType() const override { return Type::VISIT; }
 };
 
 
