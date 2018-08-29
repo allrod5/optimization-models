@@ -221,7 +221,7 @@ class MIPSolver {
     }
     SCIPfree(&scip_);
   }
-  Variable binary_variable(double objective) {
+  Variable binary_variable(double objective) const {
     return push_var(BinaryVariable(scip_, objective, next_name()));
   }
   Variable integer_variable(int lower_bound, int upper_bound,

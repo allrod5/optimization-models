@@ -1,6 +1,6 @@
 #include <cmath>
 #include "Board.h"
-#include "easyscip/easyscip.h"
+#include "../easyscip/easyscip.h"
 #include "branches.h"
 
 std::vector<Group>
