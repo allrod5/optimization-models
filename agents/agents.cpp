@@ -263,33 +263,33 @@ printSolution(
         std::vector<std::vector<std::vector<easyscip::Variable>>> &assignmentVariables,
         std::vector<std::vector<std::vector<easyscip::Variable>>> &costVariables) {
     for (int j = 0; j < context.getVisits().size(); ++j) {
-        bool assigned = false;
+//        bool assigned = false;
         int slot = context.getVisits()[j].getSlot();
         for (int i = 0; i < context.getAgents().size(); ++i) {
             if (solution.value(assignmentVariables[i][j][slot]) <= 0.5) continue;
-            std::cout << "\nVisit " << j << " [slot=" << slot << "] was assigned to agent " << i;
-            assigned = true;
+            std::cout << j << " " << i << "\n";
+//            assigned = true;
         }
-        if (not assigned) {
-            std::cout << "\nVisit " << j << " [slot=" << slot << "] was cancelled";
-        }
+//        if (not assigned) {
+//            std::cout << "\nVisit " << j << " [slot=" << slot << "] was cancelled";
+//        }
     }
 
-    for (int a = 0; a < context.getAgents().size(); a ++) {
-        std::cout << "\n\nAgent " << a << ": ";
-        for (int i = 0; i <= context.getVisits().size(); i++) {
-            for (int j = 0; j <= context.getVisits().size(); j++) {
-                if (solution.value(costVariables[a][i][j]) <= 0.5) continue;
-                if (i == context.getVisits().size() && j == context.getVisits().size()) {
-                    std::cout << "Remained at Home ::: ";
-                } else if (i == context.getVisits().size()) {
-                    std::cout << "From Home went to Visit " << j << " [slot=" << context.getVisits()[j].getSlot() << "] ::: ";
-                } else if (j == context.getVisits().size()) {
-                    std::cout << "From Visit " << i << " [slot=" << context.getVisits()[i].getSlot() << "] to Home ::: ";
-                } else {
-                    std::cout << "From Visit " << i << " [slot=" << context.getVisits()[i].getSlot() << "] to Visit " << j << " [slot=" << context.getVisits()[j].getSlot() << "] :::";
-                }
-            }
-        }
-    }
+//    for (int a = 0; a < context.getAgents().size(); a ++) {
+//        std::cout << "\n\nAgent " << a << ": ";
+//        for (int i = 0; i <= context.getVisits().size(); i++) {
+//            for (int j = 0; j <= context.getVisits().size(); j++) {
+//                if (solution.value(costVariables[a][i][j]) <= 0.5) continue;
+//                if (i == context.getVisits().size() && j == context.getVisits().size()) {
+//                    std::cout << "Remained at Home ::: ";
+//                } else if (i == context.getVisits().size()) {
+//                    std::cout << "From Home went to Visit " << j << " [slot=" << context.getVisits()[j].getSlot() << "] ::: ";
+//                } else if (j == context.getVisits().size()) {
+//                    std::cout << "From Visit " << i << " [slot=" << context.getVisits()[i].getSlot() << "] to Home ::: ";
+//                } else {
+//                    std::cout << "From Visit " << i << " [slot=" << context.getVisits()[i].getSlot() << "] to Visit " << j << " [slot=" << context.getVisits()[j].getSlot() << "] :::";
+//                }
+//            }
+//        }
+//    }
 }
